@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const app = createApp()
 
-const PROT = 5000 ;
+const PROT = process.env.PORT ;
 
 mongoose.connect('mongodb+srv://kaly100diallo:OwIAT5JrWodxRWQp@cluster0.meqcopi.mongodb.net/capsar?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
