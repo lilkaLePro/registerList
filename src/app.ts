@@ -5,6 +5,7 @@ import 'dotenv/config'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import path from 'path'
+const url = process.env.FRONT_URL;
 
 export function createApp() {
 const app = express();  
@@ -16,7 +17,7 @@ const app = express();
         cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 }
     }));
     app.use(cors({
-        origin : process.env.FRONT_URL ,
+        origin : url ,
         methods : ["GET","POST","PUT","DELETE"],
         credentials : true
     }));

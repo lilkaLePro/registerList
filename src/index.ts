@@ -3,9 +3,10 @@ import mongoose from 'mongoose';
 
 const app = createApp()
 
-const PROT = process.env.PORT ;
+const PROT = 5000 ;
+const URL = process.env.DATABASE_URL;
 
-mongoose.connect('mongodb+srv://kaly100diallo:OwIAT5JrWodxRWQp@cluster0.meqcopi.mongodb.net/capsar?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(URL || "")
 .then(() => {
     
     app.listen(PROT , () => {
