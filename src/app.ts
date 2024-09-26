@@ -17,9 +17,10 @@ const app = express();
         cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 }
     }));
     app.use(cors({
-        origin : process.env.FRONT_URL || "locahost://3000",
+        origin : url || 'http://localhost:3000',
         methods : ["GET","POST","PUT","DELETE"],
-        credentials : true
+        credentials : true,
+        
     }));
     app.use(express.json());
     app.use(express.static(path.join(__dirname, "public")))

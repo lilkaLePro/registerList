@@ -8,7 +8,7 @@ const URL = process.env.DATABASE_URL;
 
 mongoose.connect(URL || "")
 .then(() => {
-    
+        
     app.listen(PROT , () => {
         console.log('db connected');
         console.log('server running');        
