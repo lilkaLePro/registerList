@@ -17,7 +17,7 @@ const app = express();
         cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 }
     }));
     app.use(cors({
-        origin : ["http://localhost:3000", "https://enens.vercel.app/"] ,
+        origin : process.env.FRONT_URL || "locahost://3000",
         methods : ["GET","POST","PUT","DELETE"],
         credentials : true
     }));
